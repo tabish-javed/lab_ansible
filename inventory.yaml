@@ -1,0 +1,16 @@
+---
+ubuntu:
+  hosts:
+    node1:
+      ansible_host: 172.28.1.10
+    node2:
+      ansible_host: 172.28.1.11
+  vars:
+    # ansible_become: true
+    ansible_user: ansible
+    # ansible_password: ansible
+    # ansible_python_interpreter: /usr/bin/python3
+
+infra:
+  children:
+    ubuntu:

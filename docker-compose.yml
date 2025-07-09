@@ -1,0 +1,34 @@
+services:
+  node1:
+    build: .
+    image: ansible-node:latest
+    container_name: node1
+    hostname: node1
+    networks:
+      ansible_net:
+        ipv4_address: 172.28.1.10
+    volumes:
+      - sshdata_node1:/home/ansible/.ssh
+
+  node2:
+    build: .
+    image: ansible-node:latest
+    container_name: node2
+    hostname: node2
+    networks:
+      ansible_net:
+        ipv4_address: 172.28.1.11
+    volumes:
+      - sshdata_node2:/home/ansible/.ssh
+
+
+networks:
+  ansible_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.1.0/24
+
+volumes:
+  sshdata_node1:
+  sshdata_node2:
