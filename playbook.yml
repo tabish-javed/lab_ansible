@@ -5,4 +5,4 @@
 
     - name: Display date and time
       ansible.builtin.debug:
-        var: ansible_date_time.time
+        var: ansible_date_time

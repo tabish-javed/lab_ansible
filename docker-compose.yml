@@ -21,7 +21,6 @@ services:
     volumes:
       - sshdata_node2:/home/ansible/.ssh
 
-
 networks:
   ansible_net:
     driver: bridge
