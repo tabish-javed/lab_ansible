@@ -1,8 +1,14 @@
 ---
-- name: Test Play
+- name: Create home directories if missing
   hosts: ubuntu
   tasks:
 
     - name: Display date and time
       ansible.builtin.debug:
         var: ansible_date_time
+
+    - name: Create home directories
+      create_home_dirs:
+        users:
+          - abc
+          - xyz
