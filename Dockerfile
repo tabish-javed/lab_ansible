@@ -29,6 +29,7 @@ RUN chmod +x /entrypoint.sh
 EXPOSE 22
 
 ENV TZ=Asia/Kolkata
+# ENV TZ=America/New_York
 
 # Start SSH server with entrypoint to fix ownership dynamically
 ENTRYPOINT ["/entrypoint.sh"]
