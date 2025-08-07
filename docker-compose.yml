@@ -1,6 +1,8 @@
 services:
+
   node1:
-    build: .
+    build:
+      context: .
     image: ansible-node:latest
     container_name: node1
     hostname: node1
@@ -11,7 +13,8 @@ services:
       - sshdata_node1:/home/ansible/.ssh
 
   node2:
-    build: .
+    depends_on:
+      - node1
     image: ansible-node:latest
     container_name: node2
     hostname: node2
